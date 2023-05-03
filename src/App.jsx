@@ -5,7 +5,7 @@ import Artwork from "./components/Artwork";
 
 function App() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-hidden">
       <Navbar />
       <Hero />
       <Projects />
