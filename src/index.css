@@ -11,7 +11,7 @@
     }
 
     .heading{
-        @apply text-[#05c4b7] text-7xl font-semibold tracking-wide;
+        @apply text-[#05c4b7] text-7xl font-semibold tracking-wide text-center;
     }
 
     .sub-heading{
@@ -20,6 +20,14 @@
 
     .sub-text{
         @apply text-gray-200 text-center;
+    }
+
+    .image-before{
+        @apply absolute h-[360px] rounded-lg translate-x-[10px] rotate-[2deg] group-hover:translate-x-[100px] group-hover:rotate-[10deg] group-hover:scale-110 transition-all duration-500 ease-[cubic-bezier(.29,-0.01,.16,1)];
+    }
+
+    .image-after{
+        @apply absolute h-[360px] rounded-lg translate-x-[-10px] rotate-[-2deg] group-hover:translate-x-[-100px] group-hover:rotate-[-10deg] group-hover:scale-90 transition-all duration-500 ease-[cubic-bezier(.29,-0.01,.16,1)];
     }
 
 }
