@@ -6,7 +6,7 @@ const Navbar = () => {
         <div className='fixed h-20 w-screen bg-[#0f1829] text-white font-Poppins shadow-lg z-10'>
             <div className='flex justify-between items-center w-full h-full px-6 max-w-[1200px] mx-auto'>
 
-                <p className='text-xl font-bold'>Portfolio</p>
+                <p className='text-xl font-bold'><a href="#hero">Portfolio</a></p>
 
                 <div className='flex gap-6 justify-center items-center'>
                     <BsMoonStarsFill className='text-xl' />

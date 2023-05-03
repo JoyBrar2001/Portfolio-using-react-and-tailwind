@@ -19,7 +19,7 @@
     }
 
     .sub-text{
-        @apply text-gray-200 text-center;
+        @apply text-gray-300 text-center;
     }
 
     .image-before{
@@ -30,4 +30,8 @@
         @apply absolute h-[360px] rounded-lg translate-x-[-10px] rotate-[-2deg] group-hover:translate-x-[-100px] group-hover:rotate-[-10deg] group-hover:scale-90 transition-all duration-500 ease-[cubic-bezier(.29,-0.01,.16,1)];
     }
 
+}
+
+html{
+    scroll-behavior: smooth;
 }
