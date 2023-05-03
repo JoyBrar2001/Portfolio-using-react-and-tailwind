@@ -23,11 +23,11 @@ const CreateCard = (props) => {
     <Tilt options={defaultOptions} className='w-[500px] h-[500px] bg-white p-3 rounded-lg shadow-lg bg-gradient-to-br from-[#e0c3fc] to-[#8ec5fc] transition-all duration-75'>
 
       <div>
-          
+
         <div className='absolute h-[50px] w-[50px] top-[-15px] right-[-15px] bg-gradient-to-br from-gray-700 to-gray-950 rounded-full flex justify-center items-center cursor-pointer' onClick={() => window.open(props.link, "_blank")}>
           <BsGithub className='text-white h-[70%] w-[70%]' />
         </div>
-          
+
         <img src={props.img} alt="Portfolio Image" className='rounded-lg' />
       </div>
 
@@ -64,12 +64,18 @@ const Projects = () => {
   ];
 
   return (
-    <div className='h-full min-h-screen w-screen bg-[#0f1829] text-gray-800 flex flex-wrap justify-center items-center gap-16'>
+    <div className='h-full min-h-screen w-full bg-[#0f1829] text-gray-800'>
 
-      {projectsList.map((project, index) => (
-        <CreateCard img={project.image} title={project.title} description={project.description} />
-      ))}
+      <h1 className='heading text-center'>Projects</h1>
+      <h2 className='sub-heading text-lg font-light mt-4'>Here are some of the web development projects I've made up until now</h2>
 
+      <div className='h-full min-h-screen w-full bg-[#0f1829] text-gray-800 flex flex-wrap justify-center items-center gap-16 mt-10'>
+
+        {projectsList.map((project, index) => (
+          <CreateCard img={project.image} title={project.title} description={project.description} />
+        ))}
+
+      </div>
     </div>
   );
 }
