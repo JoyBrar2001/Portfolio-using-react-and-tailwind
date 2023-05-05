@@ -8,7 +8,7 @@ import animatedForm from '../assets/Projects/loginandsigninform.png';
 import portfolio3d from '../assets/Projects/portfolio3d.png';
 import moviesapp from '../assets/Projects/moviesapp.png';
 import shoesUI from '../assets/Projects/shoeswebsite.png';
-import { BsGithub } from 'react-icons/bs';
+import { BsGithub, BsArrowUpLeft } from 'react-icons/bs';
 
 const CreateCard = (props) => {
 
@@ -27,25 +27,25 @@ const CreateCard = (props) => {
   return (
     <Tilt options={defaultOptions} className='relative w-[375px] h-[375px] lg:w-[450px] lg:h-[450px] rounded-lg shadow-lg  transition-all duration-75'>
 
-      <motion.div 
-      initial= {{opacity: 0, x:-100}}
-      whileInView= {{opacity: 1, x:0}}
-      transition= {{duration: 0.5, delay: props.number%2==0? 0 : 0.3, ease: easeInOut}}
-      className='w-full h-full bg-gradient-to-br from-[#e0c3fc] to-[#8ec5fc] p-3 rounded-lg'>
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: props.number % 2 == 0 ? 0 : 0.3, ease: easeInOut }}
+        className='w-full h-full bg-gradient-to-br from-[#e0c3fc] to-[#8ec5fc] p-3 rounded-lg'>
 
 
-      <a href={props.link} target='blank' className='absolute h-[50px] w-[50px] top-[-15px] right-[-15px] bg-gradient-to-br from-gray-700 to-gray-950 rounded-full flex justify-center items-center cursor-pointer'>
-        <BsGithub className='text-white h-[70%] w-[70%]' />
-      </a>
+        <a href={props.link} target='blank' className='absolute h-[50px] w-[50px] top-[-15px] right-[-15px] bg-gradient-to-br from-gray-700 to-gray-950 rounded-full flex justify-center items-center cursor-pointer'>
+          <BsGithub className='text-white h-[70%] w-[70%]' />
+        </a>
 
-      <div>
-        <img src={props.img} alt="Portfolio Image" className='rounded-lg' />
-      </div>
+        <div>
+          <img src={props.img} alt="Portfolio Image" className='rounded-lg' />
+        </div>
 
-      <div className='p-3'>
-        <h1 className='text-2xl lg:text-3xl font-semibold uppercase my-3'>{props.title}</h1>
-        <p className='text-sm lg:text-lg font-normal'>{props.description}</p>
-      </div>
+        <div className='p-3'>
+          <h1 className='text-2xl lg:text-3xl font-semibold uppercase my-3'>{props.title}</h1>
+          <p className='text-sm lg:text-lg font-normal'>{props.description}</p>
+        </div>
 
       </motion.div>
     </Tilt>
@@ -97,10 +97,27 @@ const Projects = () => {
         <div className='h-full min-h-screen w-full bg-[#0f1829] text-gray-800 flex flex-wrap justify-center items-center gap-16 mt-10'>
 
           {projectsList.map((project, index) => (
-            <CreateCard img={project.image} title={project.title} description={project.description} link={project.link} number={index}/>
+            <CreateCard img={project.image} title={project.title} description={project.description} link={project.link} number={index} />
           ))}
 
         </div>
+
+        <div className='relative h-[60px] w-[350px] bg-white mx-auto rounded-full p-[5px] group hover:shadow-cyan-500/50 hover:shadow-lg transition-all duration-300 z-0 mt-12'>
+
+          <div className='absolute h-[50px] w-[50px] bg-cyan-400 top-[5px] left-[5px] z-[-2] rounded-full flex justify-center items-center'>
+            <BsGithub size={28} color='white' />
+          </div>
+
+          <div className='h-[50px] w-[50px] bg-cyan-400 rounded-full group-hover:ml-[290px] group-hover:rotate-90 transition-all duration-500 ease-in-out flex items-center justify-center'>
+            <BsArrowUpLeft size={27} color='white' />
+          </div>
+
+          <div className='absolute w-full h-full flex top-0 left-0 justify-center items-center'>
+            <p className='font-semibold tracking-wide'>Check out my Github !</p>
+          </div>
+
+        </div>
+
       </div>
     </div>
   );
