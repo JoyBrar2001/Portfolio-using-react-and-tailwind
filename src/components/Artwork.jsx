@@ -1,14 +1,24 @@
 import React from 'react';
+import { easeInOut, motion } from 'framer-motion';
+
 import Gamora from '../assets/Artwork/Gamora Thanos.jpg';
 import GamoraOriginal from '../assets/Artwork/Gamora Thanos - Original.png';
 import Thor from '../assets/Artwork/Thor - 1.jpg';
 import ThorOriginal from '../assets/Artwork/Thor Light Streak - Final.png';
+import Batman from '../assets/Artwork/The Batman - Double Exposure.png';
+import BatmanOriginal from '../assets/Artwork/The Batman - Before.png'
 
 const CreateArtworkCard = (props) => {
+
     return (
-        <div className='w-[360px] h-[540px] rounded-md flex flex-col justify-center items-center group shadow-xl px-4 py-6 bg-gradient-to-b from-[#2575fc33] to-[#6a11cb00] bg-opacity-10'>
-            <div className='w-[full] mx-auto px-3 py-1 rounded-xl bg-gradient-to-t from-[#FFFFFF00] to-[#FFFFFF22] shadow-2xl border border-[#FFFFFF66]'>
-                <h2 className='sub-heading text-[#00ebdb]'>{props.title}</h2>
+        <motion.div 
+            initial= {{opacity: 0, x:-100}}
+            whileInView= {{opacity: 1, x:0}}
+            transition= {{duration: 0.5, delay: props.number%2==0? 0 : 0.3, ease: easeInOut}}
+            className='w-[360px] h-[540px] rounded-md flex flex-col justify-center items-center group shadow-xl px-4 py-6 bg-gradient-to-b from-[#2575fc33] to-[#6a11cb00] bg-opacity-10'>
+
+            <div className='relative w-[full] mx-auto px-3 py-1 rounded-xl bg-cyan-500 shadow-lg shadow-cyan-500/50'>
+                <h2 className='sub-heading '>{props.title}</h2>
             </div>
 
             <div className='relative w-full h-[400px] flex justify-center items-center'>
@@ -19,7 +29,7 @@ const CreateArtworkCard = (props) => {
             <div className='w-[75%] mx-auto'>
                 <p className='sub-text'>{props.desc}</p>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
@@ -38,6 +48,12 @@ const Artwork = () => {
             title: "Thor Light Streak ",
             desc: "A Thor wallpaper, made with the use of some lightstreak effects",
         },
+        {
+            imgBefore: BatmanOriginal,
+            imgAfter: Batman,
+            title: "Batman Double Exposure",
+            desc: "A poster made for The Batman (2022) using a method - Double Exposure",
+        },
     ];
 
     return (
@@ -48,10 +64,10 @@ const Artwork = () => {
 
                 <h2 className='sub-heading text-lg font-light mb-12'>Here are some of my artworks I've made as a Graphic Designer</h2>
 
-                <div className='flex flex-wrap gap-12 max-w-[1200px] justify-center items-center mx-auto'>
+                <div className='flex flex-wrap gap-20 max-w-[1200px] justify-center items-center mx-auto'>
 
                     {artworkList.map((artwork, index) => (
-                        <CreateArtworkCard imgBefore={artwork.imgBefore} imgAfter={artwork.imgAfter} title={artwork.title} desc={artwork.desc} />
+                        <CreateArtworkCard number={index} imgBefore={artwork.imgBefore} imgAfter={artwork.imgAfter} title={artwork.title} desc={artwork.desc} />
                     ))}
 
                 </div>

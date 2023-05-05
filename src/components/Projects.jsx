@@ -1,8 +1,13 @@
 import React from 'react';
 import { Tilt } from 'react-tilt';
+import { easeInOut, motion } from 'framer-motion';
+
 import portfolio from '../assets/Projects/portfolio.png';
 import weatherApp from '../assets/Projects/weatherapp.png';
 import animatedForm from '../assets/Projects/loginandsigninform.png';
+import portfolio3d from '../assets/Projects/portfolio3d.png';
+import moviesapp from '../assets/Projects/moviesapp.png';
+import shoesUI from '../assets/Projects/shoeswebsite.png';
 import { BsGithub } from 'react-icons/bs';
 
 const CreateCard = (props) => {
@@ -11,7 +16,7 @@ const CreateCard = (props) => {
     reverse: false,
     max: 35,
     perspective: 1000,
-    scale: 1.1,
+    scale: 1.05,
     speed: 1000,
     transition: true,
     axis: null,
@@ -20,7 +25,14 @@ const CreateCard = (props) => {
   }
 
   return (
-    <Tilt options={defaultOptions} className='relative w-[450px] h-[450px] bg-white p-3 rounded-lg shadow-lg bg-gradient-to-br from-[#e0c3fc] to-[#8ec5fc] transition-all duration-75'>
+    <Tilt options={defaultOptions} className='relative w-[375px] h-[375px] lg:w-[450px] lg:h-[450px] rounded-lg shadow-lg  transition-all duration-75'>
+
+      <motion.div 
+      initial= {{opacity: 0, x:-100}}
+      whileInView= {{opacity: 1, x:0}}
+      transition= {{duration: 0.5, delay: props.number%2==0? 0 : 0.3, ease: easeInOut}}
+      className='w-full h-full bg-gradient-to-br from-[#e0c3fc] to-[#8ec5fc] p-3 rounded-lg'>
+
 
       <a href={props.link} target='blank' className='absolute h-[50px] w-[50px] top-[-15px] right-[-15px] bg-gradient-to-br from-gray-700 to-gray-950 rounded-full flex justify-center items-center cursor-pointer'>
         <BsGithub className='text-white h-[70%] w-[70%]' />
@@ -31,10 +43,11 @@ const CreateCard = (props) => {
       </div>
 
       <div className='p-3'>
-        <h1 className='text-3xl font-semibold uppercase my-3'>{props.title}</h1>
-        <p className='text-lg font-normal'>Here's a simple portfolio website I made using Vanilla HTML, CSS, and Javascript, this was my first portfolio, which is why its's rather simple :p</p>
+        <h1 className='text-2xl lg:text-3xl font-semibold uppercase my-3'>{props.title}</h1>
+        <p className='text-sm lg:text-lg font-normal'>{props.description}</p>
       </div>
 
+      </motion.div>
     </Tilt>
   );
 }
@@ -42,6 +55,24 @@ const CreateCard = (props) => {
 const Projects = () => {
 
   const projectsList = [
+    {
+      image: portfolio3d,
+      title: '3D Portfolio',
+      description: "Here's 3D Portolio, I made using React and Three js, using tailwind and framer motion to stylize the website,  inspired by Javascript Mastery on YouTube.",
+      link: 'https://github.com/JoyBrar2001/3D-Portfolio',
+    },
+    {
+      image: shoesUI,
+      title: 'Nike Shoes UI',
+      description: "A very stylish UI design for Nike's new shoes, coming in a fully functional colr changing feature as well :)",
+      link: 'https://github.com/JoyBrar2001/Animated-Shoe-Card-with-Colors',
+    },
+    {
+      image: moviesapp,
+      title: 'TvFlix - Movies Website',
+      description: "A movie streaming website, TvFlix, made by using the TMDB API, which fetches the details of the latest movies, and coming with a functioning search bar as well.",
+      link: 'https://github.com/JoyBrar2001/Movies-Website-Using-TMDB',
+    },
     {
       image: portfolio,
       title: 'My First Portfolio Website',
@@ -51,14 +82,8 @@ const Projects = () => {
     {
       image: weatherApp,
       title: 'Weather App',
-      description: "Here's a simple portfolio website I made using Vanilla HTML, CSS, and Javascript, this was my first portfolio, which is why its's rather simple :p",
+      description: "A Weather App, made using the Open Weather API, which fetches the weather details of any entered city, or your current location as well.",
       link: 'https://github.com/JoyBrar2001/Weather-App-with-API',
-    },
-    {
-      image: animatedForm,
-      title: 'Animated Login/Sign up form',
-      description: "Here's a simple portfolio website I made using Vanilla HTML, CSS, and Javascript, this was my first portfolio, which is why its's rather simple :p",
-      link: 'https://github.com/JoyBrar2001/Login-and-Sign-in-Animated-Form',
     },
   ];
 
@@ -72,7 +97,7 @@ const Projects = () => {
         <div className='h-full min-h-screen w-full bg-[#0f1829] text-gray-800 flex flex-wrap justify-center items-center gap-16 mt-10'>
 
           {projectsList.map((project, index) => (
-            <CreateCard img={project.image} title={project.title} description={project.description} link={project.link} />
+            <CreateCard img={project.image} title={project.title} description={project.description} link={project.link} number={index}/>
           ))}
 
         </div>

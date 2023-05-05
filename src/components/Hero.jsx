@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className='h-screen w-screen bg-[#0f1829] text-white' id="hero">
 
-      <div className='h-full w-full flex flex-col justify-end items-center max-w-[400px] mx-auto text-center gap-4 pb-10'>
+      <div className='h-full w-full flex flex-col justify-center items-center max-w-[400px] pt-20 mx-auto text-center gap-4 pb-10'>
         <h1 className='heading'>Joy Brar</h1>
 
         <h2 className='sub-heading'>Developer and Designer.</h2>
