@@ -23,7 +23,7 @@ const CreateArtworkCard = (props) => {
             
             <div className='flex flex-col justify-center items-center w-full h-full hover:bg-[#2575fc33]/10 transition-bg duration-300  px-4 py-6 rounded-lg'>
 
-                <div className='mx-auto px-3 py-1 rounded-xl bg-cyan-500 shadow-lg shadow-cyan-500/50'>
+                <div className='mx-auto px-3 py-1 rounded-xl bg-cyan-500 shadow-lg shadow-cyan-500/50 z-10'>
                     <h2 className='sub-heading'>{props.title}</h2>
                 </div>
 
