@@ -36,6 +36,10 @@ html{
     scroll-behavior: smooth;
 }
 
+:root {
+    --primary-rgb: 255, 155, 160;
+}
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -47,4 +51,30 @@ html{
 ::-webkit-scrollbar-thumb {
     background: #05c4b7;
     border-radius: 10px;
+}
+
+.screen-overlay {
+    background: linear-gradient(rgb(var(--primary-rgb), 0.15),
+            rgb(var(--primary-rgb), 0.15) 3px,
+            transparent 3px,
+            transparent 9px);
+    background-size: 100% 9px;
+
+    animation: pan-overlay 22s infinite linear;
+}
+
+.video-text-shadow{
+    text-shadow: 0 0 4px #fff,
+    0 0 11px #fff,
+    0 0 100px #fff,
+    0 0 200px #fff;
+}
+
+@keyframes pan-overlay {
+    from{
+        background-position: 0% 0%;
+    }
+    to{
+        background-position: 0% -100%;
+    }
 }
