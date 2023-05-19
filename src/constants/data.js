@@ -13,6 +13,30 @@ import BatmanOriginal from '../assets/Artwork/The Batman - Before.png'
 import Dream from '../assets/Artwork/Dream.png';
 import Lonely from '../assets/Artwork/You Look Lonely, I can fix that.png';
 
+import Photoshop from '../assets/Software Logos/Photoshop.png';
+import PremierePro from '../assets/Software Logos/PremierePro.png'
+import WebDev from '../assets/Software Logos/WebDev.png'
+import Cpp from '../assets/Software Logos/Cpp.png'
+
+export const overviewList = [
+    {
+        image: Photoshop,
+        title: 'Graphic Designer',
+    },
+    {
+        image: PremierePro,
+        title: 'Video Editor',
+    },
+    {
+        image: WebDev,
+        title: 'Web Developer',
+    },
+    {
+        image: Cpp,
+        title: 'C++ Programmer',
+    },
+]
+
 export const projectsList = [
     {
         image: portfolio3d,
