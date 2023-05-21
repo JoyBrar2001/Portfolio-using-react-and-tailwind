@@ -3,7 +3,7 @@ import { BsMoonStarsFill } from 'react-icons/bs';
 
 const Navbar = () => {
     return (
-        <div className='fixed h-20 w-screen bg-[#0f182911] backdrop-blur-lg text-white font-Poppins shadow-lg z-20'>
+        <div className='fixed h-20 w-screen bg-[#0f182911] backdrop-blur-lg text-white font-Poppins shadow-lg z-50'>
             <div className='flex justify-between items-center w-full h-full px-6 max-w-[1200px] mx-auto'>
 
                 <p className='text-xl font-bold'><a href="#hero">Portfolio</a></p>

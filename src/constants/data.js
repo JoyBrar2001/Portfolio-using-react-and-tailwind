@@ -18,6 +18,11 @@ import PremierePro from '../assets/Software Logos/PremierePro.png'
 import WebDev from '../assets/Software Logos/WebDev.png'
 import Cpp from '../assets/Software Logos/Cpp.png'
 
+import Shakira from '../assets/Videos/Shakira Edit.mp4'
+import Multiverse from '../assets/Videos/Multiverse of Madness - 5.mp4'
+import BattleRoyale from '../assets/Videos/Battle Royale.mp4'
+import ApasheVerse from '../assets/Videos/Apashe Verse.mp4'
+
 export const overviewList = [
     {
         image: Photoshop,
@@ -96,3 +101,30 @@ export const artworkList = [
         desc: "A few of my posters made by using the concept of liquified Text",
     },
 ];
+
+export const VideosList = [
+    {
+      title: 'Shakira Multifandom',
+      creator: '@joybrar & @morph',
+      videoSrc : Shakira,
+      ytLink : 'https://youtu.be/Vpu-hgAGqlY',
+    },
+    {
+      title: 'Multiverse of Madness',
+      creator: '@joybrar',
+      videoSrc : Multiverse,
+      ytLink : 'https://youtu.be/i9gZbJucHjw',
+    },
+    {
+      title: 'Battle Royale Multifandom',
+      creator: '@joybrar',
+      videoSrc : BattleRoyale,
+      ytLink : 'https://youtu.be/i9gZbJucHjw',
+    },
+    {
+      title: "Apashe's Verse",
+      creator: '@joybrar & @MKedits',
+      videoSrc : ApasheVerse,
+      ytLink : 'https://youtu.be/i9gZbJucHjw',
+    },
+  ]

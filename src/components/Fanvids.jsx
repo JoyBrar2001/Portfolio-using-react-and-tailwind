@@ -1,25 +1,54 @@
 import React from 'react'
-import Shakira from '../assets/Videos/Shakira Edit.mp4'
-import Multiverse from '../assets/Videos/Multiverse of Madness - 5.mp4'
 import JBLogo from '../assets/JB Logo with Glow.png'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../constants/motion'
+import { VideosList } from '../constants/data'
 
 const VideoCard = (props) => {
+
+  const addSound = () => {
+    const vid = document.querySelector(`#video-${props.i}`);
+    console.log(vid);
+    vid.muted = vid.muted === true ? false : true;
+  }
+
+  const removeOverlay = () => {
+    const overlay = document.querySelector(`#overlay-${props.i}`);
+    overlay.animate({
+      opacity: 0,
+    },{
+      duration: 500,
+      fill: 'forwards',
+    });
+  }
+
+  const addOverlay = () => {
+    const overlay = document.querySelector(`#overlay-${props.i}`);
+    overlay.animate({
+      opacity: 1,
+    },{
+      duration: 500,
+      fill: 'forwards',
+    });
+  }
+
   return (
     <motion.div 
       variants={fadeIn(props.i)}
       initial='hidden' 
       whileInView='show' 
-      className='w-[22rem] aspect-[10/16] border-2 border-[#ff9ba0] rounded-2xl overflow-hidden relative flex flex-col justify-end items-center mx-auto group'
+      className={`w-[22rem] aspect-[10/16] border-2 border-[#ff9ba0] rounded-2xl overflow-hidden relative flex flex-col justify-end items-center mx-auto group ${props.i >= 2 ? 'mt-24' : 'mt-0'}`}
+      onClick={addSound}
+      onMouseEnter={removeOverlay}
+      onMouseLeave={addOverlay}
     >
 
-      <div className='absolute screen-overlay h-full w-full z-10' />
+      <div id={`overlay-${props.i}`} className='absolute screen-overlay h-full w-full z-10' />
 
       <div className='absolute h-[33rem] w-[20rem] border-2 border-[#ff9ba0] z-10 mx-4 my-4 rounded-xl opacity-25' />
 
       <div className='absolute h-full w-full'>
-        <video src={props.videoSrc} className='absolute h-full object-cover' autoPlay loop muted></video>
+        <video id={`video-${props.i}`} src={props.videoSrc} className='absolute h-full object-cover' autoPlay loop muted></video>
       </div>
 
       <div className='absolute top-12 w-36 h-16 px-3 py-2 text-center z-20 bg-[#ff9ba066] border-2 border-[#ff9ba0] rounded-lg flex justify-center items-center text-white video-text-shadow
@@ -41,22 +70,6 @@ const VideoCard = (props) => {
 }
 
 const Fanvids = () => {
-
-  const VideosList = [
-    {
-      title: 'Shakira Multifandom',
-      creator: '@joybrar & @morph',
-      videoSrc : Shakira,
-      ytLink : 'https://youtu.be/Vpu-hgAGqlY',
-    },
-    {
-      title: 'Multiverse of Madness',
-      creator: '@joybrar',
-      videoSrc : Multiverse,
-      ytLink : 'https://youtu.be/i9gZbJucHjw',
-    },
-  ]
-
   return (
     <div className='h-full min-h-screen w-full bg-[#0f1829] text-gray-800'>
       <div className='h-full max-w-[1200px] w-full mx-auto p-4'>

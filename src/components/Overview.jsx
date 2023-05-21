@@ -23,7 +23,7 @@ const OverviewCard = ({ image, title, index }) => {
 
       <motion.div
         variants={overviewFadeIn(index)} initial='hidden' whileInView='show'
-        className='bg-gradient-to-br from-[#e0c3fc] to-[#8ec5fc] p-3 rounded-lg flex flex-col items-center justify-start w-[220px] h-[270px] gap-1'>
+        className='bg-gradient-to-br from-[#e0c3fc] to-[#8ec5fc] p-3 rounded-lg flex flex-col items-center justify-start w-[220px] h-[270px] gap-1 '>
           <img src={image} alt={title} className='w-full drop-shadow-lg' />
           <h1 className='text-gray-700 font-semibold text-xl uppercase'>{title}</h1>
       </motion.div>
