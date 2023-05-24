@@ -53,6 +53,16 @@ html{
     border-radius: 10px;
 }
 
+.white__gradient{
+    background: rgba(255, 255, 255, 0.6);
+    filter: blur(900px);
+}
+
+.blue__gradient{
+    background: linear-gradient(180deg, rgba(27, 152, 255, 0) 0%, #2796feAA 100%);
+    filter: blur(123px);
+}
+
 .screen-overlay {
     background: linear-gradient(rgb(var(--primary-rgb), 0.15),
             rgb(var(--primary-rgb), 0.15) 3px,

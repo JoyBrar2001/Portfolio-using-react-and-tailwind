@@ -60,9 +60,9 @@ const VideoCard = (props) => {
       </div>
 
       <div className='z-20 text-center font-nunito flex flex-col justify-center items-center mb-12'>
-        <img src={JBLogo} className='w-20' alt="JB Logo here" />
-        <h1 className='text-white text-4xl font-bold video-text-shadow'>{props.title}</h1>
-        <h2 className='text-white text-lg font-normal video-text-shadow mt-4'>{props.creator}</h2>
+        <img src={JBLogo} className='w-20 group-hover:translate-y-24 duration-500 ease-in-out' alt="JB Logo here" />
+        <h1 className='text-white text-4xl font-bold video-text-shadow group-hover:opacity-0 transition-all duration-300 ease-in-out'>{props.title}</h1>
+        <h2 className='text-white text-lg font-normal video-text-shadow mt-4 group-hover:opacity-0 transition-all duration3000 ease-in-out'>{props.creator}</h2>
       </div>
 
     </motion.div>
