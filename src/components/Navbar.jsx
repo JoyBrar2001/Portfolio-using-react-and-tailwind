@@ -10,7 +10,7 @@ const Navbar = () => {
 
                 <div className='flex gap-6 justify-center items-center'>
                     <BsMoonStarsFill className='text-xl' />
-                    <div className='text-white bg-[#05c4b7] px-4 py-1.5 rounded-md'>
+                    <div className='text-white bg-cyan-500 px-4 py-1.5 rounded-md'>
                         <p>Resume</p>
                     </div>
                 </div>

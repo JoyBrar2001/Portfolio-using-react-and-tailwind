@@ -11,7 +11,7 @@ const CreateArtworkCard = (props) => {
             variants={fadeIn(props.number)} initial='hidden' whileInView='show'
             className='w-[360px] h-[540px] group shadow-xl bg-gradient-to-b from-[#2575fc33] to-[#6a11cb00] bg-opacity-10 rounded-lg'>
             
-            <div className='flex flex-col justify-center items-center w-full h-full hover:bg-[#2575fc33]/10 transition-bg duration-300  px-4 py-6 rounded-lg'>
+            <div className='flex flex-col justify-center items-center w-full h-full hover:bg-[#2575fc33]/10 transition-bg duration-300 px-4 py-6 rounded-lg'>
 
                 <div className='mx-auto px-3 py-1 rounded-xl bg-cyan-500 shadow-lg shadow-cyan-500/50 z-10'>
                     <h2 className='sub-heading'>{props.title}</h2>

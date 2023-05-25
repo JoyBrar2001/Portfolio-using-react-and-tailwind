@@ -2,6 +2,8 @@ import React from 'react';
 import Joy from '../assets/Joy.jpg';
 import { BsGithub, BsLinkedin, BsYoutube } from 'react-icons/bs';
 import JoyPng from '../assets/Joy png.png';
+import { directionalFadeIn } from '../constants/motion';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   // return (
@@ -25,28 +27,31 @@ const Hero = () => {
   // </div>
 
   return (
-    <div className='h-full min-h-screen w-screen bg-dark text-white pt-28' id="hero">
-      <div className='h-full w-full max-w-[1200px] mx-auto grid grid-cols-2 justify-center items-center'>
+    <div className='h-full min-h-screen w-screen bg-[#00040f] text-white' id="hero">
+      <div className='h-full w-full max-w-[1200px] mx-auto grid md:grid-cols-2 gap-y-7 p-10 md:p-0 pt-20 md:pt-28 justify-center items-center'>
 
         <div className='flex flex-col gap-1'>
-          <h1 className='text-7xl font-bold text-cyan-500 my-6'>Hi, I'm Joy Brar</h1>
+          <motion.h1 variants={directionalFadeIn(0,'left',0,0.8)} initial='hidden' whileInView='show' className='text-5xl md:text-7xl font-bold text-cyan-500 my-6'>Hi, I'm <br className='lg:hidden'/>Joy Brar</motion.h1>
 
-          <h2 className='text-3xl font-semibold'>Frontend, UI/UX, Graphic Designer</h2>
+          <motion.h2 variants={directionalFadeIn(0,'left',0.2,0.8)} initial='hidden' whileInView='show' className='text-3xl font-semibold'>Frontend, UI/UX, Graphic Designer</motion.h2>
 
-          <p className='text-lg text-gray-400'> and a intermediate level coder, currently pursuing my Computer Science Degree in MUJ.</p>
+          <motion.p  variants={directionalFadeIn(0,'left',0.4,0.8)} initial='hidden' whileInView='show' className='text-lg text-gray-400'> and a intermediate level coder, currently pursuing my Computer Science Degree in MUJ.</motion.p>
 
-          <div className='flex w-[80%] gap-6 my-4'>
+          <motion.div variants={directionalFadeIn(0,'left',0.6,0.8)} initial='hidden' whileInView='show' className='flex w-[80%] gap-6 my-4'>
             <BsGithub className='social-icons' />
             <BsLinkedin className='social-icons' />
             <BsYoutube className='social-icons' />
-          </div>
+          </motion.div>
         </div>
 
+        <div className='absolute h-[500px] w-[500px] opacity-25 top-[-30%] left-[-30%] white__gradient z-0' />
         <div className='relative'>
-          <div className='absolute h-[300px] w-[300px] top-[10%] left-[15%] white__gradient z-0' />
-          <div className='absolute h-[300px] w-[300px] top-0 right-[20%] blue__gradient z-0' />
+          <div className='absolute h-[550px] w-[550px] top-[10%] right-[-20%] white__gradient z-0' />
+          <div className='absolute h-[300px] w-[300px] top-0 right-[20%] blue__gradient z-0 opacity-60' />
+          <motion.div variants={directionalFadeIn(0,'right',0.4,1)} initial='hidden' whileInView='show' className='bg-gradient-to-b from-gray-700/40 top-0 left-0 h-full w-full rounded-full drop-shadow-2xl border-[1px] border-cyan-500 border-opacity-100 overflow-hidden'>
+            <img variants={directionalFadeIn(0,'right',0.4,1)} initial='hidden' whileInView='show' src={JoyPng} className='h-full w-full drop-shadow-xl' alt="" />
+          </motion.div>
 
-          <img src={JoyPng} className='h-full drop-shadow-xl' alt="" />
         </div>
       </div>
     </div>

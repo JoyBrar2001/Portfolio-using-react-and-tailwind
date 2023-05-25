@@ -11,7 +11,7 @@
     }
 
     .heading{
-        @apply text-[#05c4b7] text-7xl font-semibold tracking-wide text-center;
+        @apply text-cyan-500 text-7xl font-semibold tracking-wide text-center;
     }
 
     .sub-heading{
@@ -49,7 +49,7 @@ html{
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #05c4b7;
+    background: #06b6d4;
     border-radius: 10px;
 }
 
